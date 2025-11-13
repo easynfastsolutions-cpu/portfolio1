@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#2563EB',
+                        'dark-bg': '#0F172A', // Slate 900
+                        'dark-card': '#1E293B', // Slate 800
+                    }
+                },
+            },
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1E293B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2563EB;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1D4ED8;
+        }
+        /* Style for the active nav link */
+        .nav-active {
+            color: #2563EB;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-300 font-sans leading-relaxed antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-dark-bg/80 backdrop-blur-md sticky top-0 z-50 shadow-lg shadow-black/10">
+        <nav class="container mx-auto max-w-6xl px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">
+                <span class="text-brand-blue">My Portfolio</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden text-gray-300 hover:text-white transition-colors">
+                <svg id="menu-icon-open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+                <a href="#home" class="nav-link text-gray-300 hover:text-brand-blue transition-colors nav-active">Home</a>
+                <a href="#services" class="nav-link text-gray-300 hover:text-brand-blue transition-colors">Services</a>
+                <a href="#portfolio" class="nav-link text-gray-300 hover:text-brand-blue transition-colors">Past Work</a>
+                <a href="#experience" class="nav-link text-gray-300 hover:text-brand-blue transition-colors">Experience</a>
+                <a href="#contact" class="bg-brand-blue hover:bg-blue-700 text-white font-medium py-2 px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                    Get in Touch
+                </a>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="nav-menu" class="hidden md:hidden bg-dark-card shadow-lg absolute top-full left-0 right-0">
+            <a href="#home" class="nav-link block text-center py-3 px-4 text-lg text-gray-200 hover:bg-slate-700 transition-colors">Home</a>
+            <a href="#services" class="nav-link block text-center py-3 px-4 text-lg text-gray-200 hover:bg-slate-700 transition-colors">Services</a>
+            <a href="#portfolio" class="nav-link block text-center py-3 px-4 text-lg text-gray-200 hover:bg-slate-700 transition-colors">Past Work</a>
+            <a href="#experience" class="nav-link block text-center py-3 px-4 text-lg text-gray-200 hover:bg-slate-700 transition-colors">Experience</a>
+            <a href="#contact" class="nav-link block text-center py-3 px-4 text-lg text-gray-200 hover:bg-slate-700 transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto max-w-6xl px-4">
+
+        <!-- ===== Hero Section ===== -->
+        <section id="home" class="section min-h-[80vh] flex items-center py-20 md:py-32">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Hero Text -->
+                <div class="text-center md:text-left">
+                    <span class="text-brand-blue font-semibold text-lg">Hello, I'm Ahmad sohil</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white my-4 leading-tight">
+                        Shopify & AI Automation Specialist
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-400 mb-8">
+                        I build high-performance e-commerce stores and streamline your business with intelligent AI automation.
+                    </p>
+                    <div class="flex gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="bg-brand-blue hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-0.5">
+                            Hire Me
+                        </a>
+                        <a href="#portfolio" class="bg-dark-card hover:bg-slate-700 text-gray-300 font-medium py-3 px-8 rounded-lg text-lg transition-all duration-300 border border-slate-600 hover:border-slate-500">
+                            See My Work
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="flex justify-center">
+                    <img 
+                        src="DSC_20181.jpg" 
+                        alt="Your Name - Portfolio"
+                        class="rounded-full w-64 h-64 md:w-96 md:h-96 object-cover object-top border-8 border-dark-card shadow-2xl"
+                        onerror="this.src='https://placehold.co/400x400/1E293B/E0E7FF?text=Your+Photo'"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Services Section ===== -->
+        <section id="services" class="section py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">What I Offer</h2>
+            <p class="text-xl text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                Tailored solutions to scale your e-commerce and automate your operations.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Shopify Services Card -->
+                <div class="bg-dark-card p-8 rounded-2xl shadow-xl border border-slate-700 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mb-6 shadow-lg">
+                        <!-- Shopify-like Icon (Cart) -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">Shopify E-commerce</h3>
+                    <p class="text-gray-400 mb-6 text-lg">
+                        From custom theme development to app integration, I create fast, scalable, and conversion-optimized Shopify stores.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Custom Theme Development</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Store Setup & Migration</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Performance Optimization</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>App Integration & Custom Apps</li>
+                    </ul>
+                </div>
+
+                <!-- AI Automation Card -->
+                <div class="bg-dark-card p-8 rounded-2xl shadow-xl border border-slate-700 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/20">
+                    <div class="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mb-6 shadow-lg">
+                        <!-- AI Icon (Brain/Chip) -->
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">AI Automation</h3>
+                    <p class="text-gray-400 mb-6 text-lg">
+                        Save time and money by automating repetitive tasks. I build custom AI chatbots, automate workflows, and provide data-driven insights.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Custom AI Chatbots (Customer Support)</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Workflow Automation (Zapier, Make)</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Data Entry & Processing Automation</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 text-brand-blue mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>AI-Powered Data Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Skills Section ===== -->
+        <section id="skills" class="section py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">My Technical Skills</h2>
+            <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-3 md:gap-4">
+                <!-- Add your skills here -->
+                <span class="skill-badge">Shopify</span>
+                <span class="skill-badge">Shopify Plus</span>
+                <span class="skill-badge">Liquid</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">OpenAI API</span>
+                <span class="skill-badge">LangChain</span>
+                <span class="skill-badge">Zapier</span>
+                <span class="skill-badge">Make.com</span>
+                <span class="skill-badge">APIs</span>
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3 & Tailwind</span>
+                <span class="skill-badge">Git & GitHub</span>
+            </div>
+        </section>
+
+
+                
+                <!-- Add more portfolio items as needed -->
+
+            </div>
+
+            <!-- ===== New 12-Image Grid ===== -->
+			 <section id="portfolio" class="section py-20">
+            <h3 class="text-2xl md:text-3xl font-bold text-white text-center mt-20 mb-12">
+                Some Of My Clients Work
+            </h3>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 md:gap-6">
+                
+                <!-- Image 1 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="20 stores i am handling.jpg" alt="Client Work 1" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+1'">
+                </div>
+                <!-- Image 2 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="shirt-fabrik.jpg" alt="Client Work 2" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+2'">
+                </div>
+                <!-- Image 3 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="shoplace2.PNG" alt="Client Work 3" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+3'">
+                </div>
+                <!-- Image 4 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="byanavrin..jpg" alt="Client Work 4" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+4'">
+                </div>
+                <!-- Image 5 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="luxegel.jpg" alt="Client Work 5" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+5'">
+                </div>
+                <!-- Image 6 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="mrseamosses.jpg" alt="Client Work 6" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+6'">
+                </div>
+                <!-- Image 7 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="oggbran seo.jpg" alt="Client Work 7" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+7'">
+                </div>
+                <!-- Image 8 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="one4us.jpg" alt="Client Work 8" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+8'">
+                </div>
+                <!-- Image 9 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="chetra elements.jpg" alt="Client Work 9" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+9'">
+                </div>
+                <!-- Image 10 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="elgalpon .jpg" alt="Client Work 10" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+10'">
+                </div>
+                <!-- Image 11 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="snapdealseo.jpg"Client Work 11" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+11'">
+                </div>
+                <!-- Image 12 -->
+                <div class="modal-trigger bg-dark-card rounded-lg overflow-hidden shadow-lg border border-slate-700 aspect-square transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/20 cursor-pointer">
+                    <img src="bk3.PNG" alt="Client Work 12" class="w-full h-full object-cover pointer-events-none" onerror="this.src='https://placehold.co/300x300/1E293B/E0E7FF?text=Client+12'">
+                </div>
+
+            </div>
+            <!-- ===== End of 12-Image Grid ===== -->
+
+        <!-- ===== Portfolio Section (Past Work) ===== -->
+      </section>
+     
+
+        <!-- ===== Video Section ===== -->
+        <section id="video" class="section py-20 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">See It In Action</h2>
+            <p class="text-xl text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                Watch a short demo or case study of how I approach problems and deliver results.
+            </p>
+            <div class="max-w-4xl mx-auto bg-black rounded-lg shadow-2xl overflow-hidden border border-slate-700 aspect-video">
+                <!-- Embed your YouTube or Vimeo video here -->
+                <!-- Replace with your actual video embed code -->
+                <iframe 
+                    class="w-full h-full" 
+                    src="vid.mp4" 
+                    title="Video case study" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                ></iframe>
+                <!-- A placeholder if you don't have a video yet -->
+                <!-- <div class="w-full h-full flex items-center justify-center bg-dark-card">
+                    <span class="text-gray-500 text-2xl">Your Video Case Study Here</span>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- ===== Experience Section ===== -->
+        <section id="experience" class="section py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">My Professional Journey</h2>
+            <div class="max-w-3xl mx-auto relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-4 md:left-1/2 top-0 h-full w-1 bg-dark-card rounded-full -translate-x-1/2"></div>
+                
+                <!-- Experience Item 1 -->
+                <div class="relative mb-12">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content md:ml-0 md:w-1/2 md:pr-8">
+                        <div class="bg-dark-card p-6 rounded-lg shadow-xl border border-slate-700">
+                            <span class="text-sm font-semibold text-brand-blue">2025 - Present</span>
+                            <h3 class="text-2xl font-bold text-white my-2">Senior Shopify Developer</h3>
+                            <p class="text-gray-400 font-medium mb-3">Working As Freelancer</p>
+                            <p class="text-gray-300">
+                              Working as an E-commerce Store Developer and AI Automation Expert, helping business owners simplify and scale their online operation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative mb-12">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content md:w-1/2 md:pl-8 md:ml-auto">
+                        <div class="bg-dark-card p-6 rounded-lg shadow-xl border border-slate-700">
+                            <span class="text-sm font-semibold text-brand-blue">2024 - 2025</span>
+                            <h3 class="text-2xl font-bold text-white my-2">E-commerce web Developer</h3>
+                            <p class="text-gray-400 font-medium mb-3">Fast Solutions</p>
+                            <p class="text-gray-300">
+                                Built many e-commerce sites like shopify,wordpress and wix with their Seo and automation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+				 
+                <!-- Experience Item 3 -->
+                <div class="relative mb-12">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content md:ml-0 md:w-1/2 md:pr-8">
+                        <div class="bg-dark-card p-6 rounded-lg shadow-xl border border-slate-700">
+                            <span class="text-sm font-semibold text-brand-blue">2022 - 2023</span>
+                            <h3 class="text-2xl font-bold text-white my-2">Junior Web Developer</h3>
+                            <p class="text-gray-400 font-medium mb-3">Adan it center</p>
+                            <p class="text-gray-300">
+                                Built and maintained websites for various clients, gaining foundational skills in HTML, CSS, and JavaScript.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== Contact Section ===== -->
+        <section id="contact" class="section py-20">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-4">Let's Build Together</h2>
+            <p class="text-xl text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+                Have a project in mind? Fill out the form below or send me an email.
+            </p>
+            <div class="max-w-2xl mx-auto bg-dark-card p-8 rounded-2xl shadow-2xl border border-slate-700">
+                <form action="https://formspree.io/f/mgvrvlvb" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="e.g., Shopify Store Inquiry" required>
+                    </div>
+                    <div class="mb-8">
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Your Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-input" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-brand-blue hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-0.5">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card border-t border-slate-700 mt-20">
+        <div class="container mx-auto max-w-6xl px-4 py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <p class="text-gray-400"></p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+               
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox Modal -->
+    <div id="image-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 items-center justify-center p-4 transition-opacity duration-300">
+        <div class="relative max-w-3xl max-h-[80vh] bg-dark-card rounded-lg shadow-2xl overflow-hidden">
+            <!-- Close Button -->
+            <button id="modal-close" class="absolute top-3 right-3 w-10 h-10 bg-black/50 text-white rounded-full z-10 flex items-center justify-center hover:bg-black/75 transition-colors" aria-label="Close image view">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <img id="modal-image" src="" alt="Client Work Large View" class="w-full h-auto object-contain max-h-[80vh]">
+        </div>
+    </div>
+
+    <!-- CSS definitions for custom classes -->
+    <style>
+		.form-input{
+			color: black!important;
+		}
+        .section {
+            /* For observer API */
+            scroll-margin-top: 80px; /* Height of sticky header */
+        }
+        .skill-badge {
+            @apply bg-dark-card border border-brand-blue text-brand-blue text-sm md:text-base font-medium px-4 py-2 rounded-full transition-all duration-300 hover:bg-brand-blue hover:text-white cursor-default;
+        }
+        .tag {
+            @apply bg-slate-700 text-brand-blue text-xs font-semibold px-3 py-1 rounded-full;
+        }
+        .form-input {
+            @apply w-full **bg-white** border border-slate-600 rounded-lg text-black placeholder-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all;
+        }
+		
+        /* Timeline styles */
+        .timeline-dot {
+            @apply absolute left-4 top-1.5 md:left-1/2 w-5 h-5 bg-brand-blue rounded-full border-4 border-dark-bg -translate-x-1/2;
+        }
+        .timeline-content {
+            @apply relative ml-12 md:ml-0;
+        }
+        @media (min-width: 768px) {
+            .timeline-content {
+                width: 50%;
+            }
+            .timeline-content.md\:ml-auto {
+                margin-left: 50%;
+            }
+            .timeline-content.md\:pr-8 {
+                padding-right: 2rem;
+            }
+            .timeline-content.md\:pl-8 {
+                padding-left: 2rem;
+            }
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+
+            // --- Mobile Menu Toggle ---
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('hidden');
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });
+
+            // --- Smooth Scrolling & Close Mobile Menu ---
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    // Handle case for home link
+                    if (targetId === '#') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+
+                    // Hide mobile menu after click
+                    if (!navMenu.classList.contains('hidden')) {
+                        navMenu.classList.add('hidden');
+                        iconOpen.classList.remove('hidden');
+                        iconClose.classList.add('hidden');
+                    }
+                });
+            });
+
+            // --- Active Nav Link on Scroll ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.4 // 40% of the section must be visible
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        // Remove active class from all links
+                        document.querySelectorAll('nav a.nav-link').forEach(link => {
+                            link.classList.remove('nav-active');
+                        });
+                        // Add active class to the correct link
+                        const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('nav-active');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // --- Image Lightbox Logic ---
+            const modal = document.getElementById('image-modal');
+            const modalClose = document.getElementById('modal-close');
+            const modalImage = document.getElementById('modal-image');
+            const imageTriggers = document.querySelectorAll('.modal-trigger');
+
+            if (modal && modalClose && modalImage && imageTriggers.length > 0) {
+                
+                // Function to open the modal
+                const openModal = (e) => {
+                    const imgElement = e.currentTarget.querySelector('img');
+                    if (imgElement) {
+                        modalImage.src = imgElement.src;
+                        modal.classList.remove('hidden');
+                        modal.classList.add('flex'); // Use flex to center
+                        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                    }
+                };
+
+                // Function to close the modal
+                const closeModal = () => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    modalImage.src = ""; // Clear src
+                    document.body.style.overflow = 'auto'; // Restore scrolling
+                };
+
+                // Add click listener to all grid images
+                imageTriggers.forEach(trigger => {
+                    trigger.addEventListener('click', openModal);
+                });
+
+                // Add click listener to close button
+                modalClose.addEventListener('click', closeModal);
+
+                // Add click listener to modal backdrop (to close)
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                // Close modal with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                        closeModal();
+                    }
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>
