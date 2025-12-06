@@ -167,3 +167,9 @@
     padding: 1rem;
     background: rgba(0, 0, 0, 0.7);
   }
+
+/* Add this inside your <style> tags */
+.group:hover {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.15); /* Soft blue glow */
+    border-color: #2563EB; /* Make border blue */
+}
